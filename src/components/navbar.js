@@ -2,6 +2,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Route } from 'react-router'
 
 const navigation = {
   categories: [
@@ -47,7 +48,7 @@ const navigation = {
       featured: [
         {
           name: 'New Arrivals',
-          href: '#',
+          href: '',
           imageSrc: 'https://img.freepik.com/premium-photo/handsome-brutal-man-hipster-model-with-hairstyle-fashionable-black-leather-jacket-walks-mall_338491-16875.jpg?w=360',
           imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
         },
@@ -212,9 +213,11 @@ export default function Example() {
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                  
+                    <a href="" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
                     </a>
+                  
                   </div>
                 </div>
 
@@ -276,7 +279,7 @@ export default function Example() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-indigo-600 text-indigo-600'
+                                  ? 'border-indigo-600 text-indigo-6n00'
                                   : 'border-transparent text-gray-50 hover:text-gray-800',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
                               )}

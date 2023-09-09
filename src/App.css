@@ -64,38 +64,6 @@
 
 /* banner  */
 
-@media (max-width:961px){
-  .banner1{
-    height:400px;
-  }
-}
-@media (max-width:600px){
-  .banner1{
-    height:320px;
-  }
-}
-@media (max-width:480px){
-  .banner1{
-    height:240px;
-  }
-}
+
 
 /* logo */
-@media (max-width:1023px){
-  .logo{
-    width:240px;
-    height:240px;
-  }
-}
-@media (max-width:940px){
-  .logo{
-    height:200px;
-    width:200px;
-  }
-}
-@media (max-width:710px){
-  .logo{
-    height:200px;
-    width:200px;
-  }
-}

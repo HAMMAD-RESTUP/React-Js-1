@@ -6,19 +6,22 @@ import Navbar from './components/navbar'
 import reportWebVitals from './reportWebVitals';
 import Banner from './components/banner';
 import Popular from './components/popular';
+import Products from './components/productslist'
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
     <Navbar/>
     <Banner/>
     <Popular/>
-  
+    <Products/>
 
- 
   </React.StrictMode>,
+
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
