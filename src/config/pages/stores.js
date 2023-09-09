@@ -1,4 +1,4 @@
-
+import Slider from "../../components/slider"
 const products = [
     {
       id: 1,
@@ -75,10 +75,21 @@ const products = [
     // More products...
   ]
   
-  export default function Productlist() {
+  export default function Store() {
     return (
+
+
+
+
+
+
+
+
+
+
+      
       <div className="bg-white">
-        <span className="text-5xl bg-slate-950 text-center text-gray-100 heading ">Featured <span className="text-5xl bg-slate-950 text-center text-gray-100 ">Category</span></span>
+      <Slider/>
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -94,7 +105,7 @@ const products = [
                 <div className="mt-4 flex justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-700 ">
-                      <a href={product.href} className="anchor">
+                      <a href={product.href}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.name}
                       </a>

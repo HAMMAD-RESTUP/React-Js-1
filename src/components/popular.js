@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 /*
   This example requires some changes to your config:
   
@@ -15,32 +15,32 @@
 */
 const callouts = [
     {
-      name: 'New Arrival',
+      name1: 'New Arrival',
       imageSrc: 'https://yoursleather.com/cdn/shop/collections/new-arrival-1.webp?v=1671819479&width=750',
       imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
       href: '#',
     },
     {
-      name: "Women's bomber",
+      name2: "Women's bomber",
       imageSrc: 'https://yoursleather.com/cdn/shop/collections/WhatsApp_Image_2022-12-23_at_6.53.28_PM.jpg?v=1671819286&width=750',
       imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
       href: '#',
     },
     {
-      name:"Women's biker",
+      name3:"Women's biker",
       imageSrc: 'https://yoursleather.com/cdn/shop/collections/WhatsApp_Image_2022-12-21_at_8.27.21_PM.jpg?v=1671636786&width=750',
       imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
       href: '#',
     },
     {
-      name: "Men's Bomber",
+      name4: "Men's Bomber",
   
       imageSrc: 'https://yoursleather.com/cdn/shop/collections/WhatsApp_Image_2022-12-23_at_6.07.20_PM.jpg?v=1671801033&width=750',
       imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
       href: '#',
     },
     {
-      name: "Men's New Arrival",
+      name5: "Men's New Arrival",
       imageSrc: 'https://yoursleather.com/cdn/shop/collections/WhatsApp_Image_2023-01-31_at_2.17.04_AM_3.jpg?v=1675165218&width=750',
       imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
       href: '#',
@@ -65,10 +65,26 @@ const callouts = [
                     />
                   </div>
                   <h3 className="mt-6 text-lg text-gray-500">
-                    <a href={callout.href}>
+                    <Link to="store" className="anchor">
                       <span className="absolute inset-0" />
-                      {callout.name}
-                    </a>
+                      {callout.name1}
+                    </Link>
+                    <Link to="store" className="anchor">
+                      <span className="absolute inset-0" />
+                      {callout.name2}
+                    </Link>
+                    <Link to="store" className="anchor">
+                      <span className="absolute inset-0" />
+                      {callout.name3}
+                    </Link>
+                    <Link to="store" className="anchor">
+                      <span className="absolute inset-0" />
+                      {callout.name4}
+                    </Link>
+                    <Link to="store" className="anchor">
+                      <span className="absolute inset-0" />
+                      {callout.name5}
+                    </Link>
                   </h3>
                
                 </div>

@@ -2,8 +2,10 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Route } from 'react-router'
-
+import {Link }from "react-router-dom"
+import Banner from '../../components/banner'
+import Popular from '../../components/popular'
+import PopularList from '../../components/productslist'
 const navigation = {
   categories: [
     {
@@ -13,33 +15,55 @@ const navigation = {
         {
           name: 'New Arrivals',
           href: '#',
-          imageSrc: 'https://img.freepik.com/free-photo/young-woman-walking-park_1303-25147.jpg?w=360&t=st=1691837722~exp=1691838322~hmac=3a06bddda1ba266a64063c1118b1acfa2705f7ef0cfc4a4428a31e149d87cbb0',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
           imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
         },
         {
-          name: 'Leather Jackets',
+          name: 'Basic Tees',
           href: '#',
-          imageSrc: 'https://img.freepik.com/free-photo/portrait-young-woman-black-jacket-looking-away_23-2148148238.jpg?w=360&t=st=1691838010~exp=1691838610~hmac=fa0c031cf06f446b087410a3b3e5a6fb94c0b01f50c91af59755106c0d2fdbaf',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
           imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
         },
       ],
       sections: [
         {
           id: 'clothing',
-          name: 'Leather Jackets',
+          name: 'Clothing',
           items: [
-            { name: 'View All', href: '#' },
-            { name: 'Women Biker Jackets', href: '#' },
-            { name: 'Women Bomber Jackets', href: '#' },
-            { name: 'Women Leather Blazers', href: '#' },
-            { name: 'Women Leather coats', href: '#' },
-            { name: 'Women suede Jackets', href: '#' },
-            { name: 'Women Aviator Jackets', href: '#' },
-            { name: 'Women Trench-Winter Jackets', href: '#' },
-            { name: 'Women Long Coats', href: '#' },
+            { name: 'Tops', href: '#' },
+            { name: 'Dresses', href: '#' },
+            { name: 'Pants', href: '#' },
+            { name: 'Denim', href: '#' },
+            { name: 'Sweaters', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: 'Browse All', href: '#' },
           ],
         },
-   
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Significant Other', href: '#' },
+          ],
+        },
       ],
     },
     {
@@ -48,14 +72,14 @@ const navigation = {
       featured: [
         {
           name: 'New Arrivals',
-          href: '',
-          imageSrc: 'https://img.freepik.com/premium-photo/handsome-brutal-man-hipster-model-with-hairstyle-fashionable-black-leather-jacket-walks-mall_338491-16875.jpg?w=360',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
           imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
         },
         {
-          name: 'Leather Jackets',
+          name: 'Artwork Tees',
           href: '#',
-          imageSrc: 'https://img.freepik.com/free-photo/young-handsome-man-street-outfit_1303-19654.jpg?w=740&t=st=1691837809~exp=1691838409~hmac=729e1679122e25e7b0fc31300753c3aee2712240243700957ffe2a880e58c006',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
           imageAlt:
             'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
         },
@@ -63,25 +87,44 @@ const navigation = {
       sections: [
         {
           id: 'clothing',
-          name: 'Leather Jackets',
+          name: 'Clothing',
           items: [
-            { name: 'View All', href: '#' },
-            { name: 'Men Biker Jackets', href: '#' },
-            { name: 'Men Bomber Jackets', href: '#' },
-            { name: 'Men Leather Blazers', href: '#' },
-            { name: 'Men Leather coats', href: '#' },
-            { name: 'Men suede Jackets', href: '#' },
-            { name: 'Men Aviator Jackets', href: '#' },
-            { name: 'Men Trench-Winter Jackets', href: '#' },
-            { name: 'Men Long Coats', href: '#' },
+            { name: 'Tops', href: '#' },
+            { name: 'Pants', href: '#' },
+            { name: 'Sweaters', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: 'Browse All', href: '#' },
           ],
         },
-   
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+          ],
+        },
       ],
     },
   ],
   pages: [
-    { name: 'Company', href: '#' },
+    // { name: 'Company', href: '#' },
     { name: 'Stores', href: '#' },
   ],
 }
@@ -90,7 +133,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Home() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -138,15 +181,16 @@ export default function Example() {
                   <div className="border-b border-gray-200">
                     <Tab.List className="-mb-px flex space-x-8 px-4">
                       {navigation.categories.map((category) => (
-                        <Tab
+                          <Tab
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-900',
-                              'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
-                            )
-                          }
-                        >
+                                selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-900',
+                                'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
+                                )
+                            }
+                            >
+        
                           {category.name}
                         </Tab>
                       ))}
@@ -161,11 +205,11 @@ export default function Example() {
                               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                 <img src={item.imageSrc} alt={item.imageAlt} className="object-cover object-center" />
                               </div>
-                              <a href={item.href} className="mt-6 block font-medium text-gray-900 ">
-                                <span className="absolute inset-0 z-10 " aria-hidden="true" />
+                              <Link to="store" className="mt-6 block font-medium text-gray-900">
+                                <span className="absolute inset-0 z-10" aria-hidden="true" />
                                 {item.name}
-                              </a>
-                              <p aria-hidden="true" className="mt-1 font-semibold text-red-700">
+                              </Link>
+                              <p aria-hidden="true" className="mt-1">
                                 Shop now
                               </p>
                             </div>
@@ -182,10 +226,10 @@ export default function Example() {
                               className="mt-6 flex flex-col space-y-6"
                             >
                               {section.items.map((item) => (
-                                <li key={item.name} className="flow-root ">
-                                  <a href={item.href} className="-m-2 block p-2 text-gray-700 hover:bg-gray-200 ">
+                                <li key={item.name} className="flow-root">
+                                  <Link to="store" className="-m-2 block p-2 text-gray-500">
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -197,32 +241,33 @@ export default function Example() {
                 </Tab.Group>
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                  {navigation.pages.map((page) => (
-                    <div key={page.name} className="flow-root">
-                      <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
-                        {page.name}
-                      </a>
+                  
+                    <div className="flow-root">
                     </div>
-                  ))}
+                
                 </div>
+                      <Link to="store" className="-m-2 block p-2 font-medium text-gray-900">
+                        store
+                      </Link>
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                      Sign in
-                    </a>
+                    <Link to="signin" >Sign in</Link>
                   </div>
                   <div className="flow-root">
-                  
-                    <a href="" className="-m-2 block p-2 font-medium text-gray-900">
+                    <Link to="store" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
-                    </a>
-                  
+                    </Link>
+                  </div>
+                  <div className="flow-root">
+                    <Link to="store" className="-m-2 block p-2 font-medium text-gray-900">
+                      API Check
+                    </Link>
                   </div>
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <Link to="store" className="-m-2 flex items-center p-2">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -230,7 +275,7 @@ export default function Example() {
                     />
                     <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
                     <span className="sr-only">, change currency</span>
-                  </a>
+                  </Link>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -238,34 +283,34 @@ export default function Example() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-neutral-950">
-        <p className="flex h-10 items-center justify-center bg-white-50 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+      <header className="relative bg-gray-950">
+        <p className="flex h-10 items-center justify-center bg-gray-950 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+          Get 50% Off on Winter Collection
         </p>
 
         <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="ok">
+          <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <button
                 type="button"
-                className="relative rounded-md bg-neutral p-2 text-white lg:hidden"
+                className="relative rounded-md bg-gray-950 p-2 text-gray-50 lg:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open menu</span>
-                <Bars3Icon className="h-8 w-8" aria-hidden="true" />
+                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link to="/">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-8  logo "
-                    src="logo.png"
-                    alt="logo"
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}
@@ -279,8 +324,8 @@ export default function Example() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-indigo-600 text-indigo-6n00'
-                                  : 'border-transparent text-gray-50 hover:text-gray-800',
+                                  ? 'border-indigo-600 text-indigo-600'
+                                  : 'border-transparent text-gray-100 hover:text-gray-500',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
                               )}
                             >
@@ -314,10 +359,10 @@ export default function Example() {
                                               className="object-cover object-center"
                                             />
                                           </div>
-                                          <a href={item.href} className="mt-6 block font-medium text-gray-900">
+                                          <Link to="store" className="mt-6 block font-medium text-gray-900">
                                             <span className="absolute inset-0 z-10" aria-hidden="true" />
                                             {item.name}
-                                          </a>
+                                          </Link>
                                           <p aria-hidden="true" className="mt-1">
                                             Shop now
                                           </p>
@@ -337,9 +382,9 @@ export default function Example() {
                                           >
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
-                                                <a href={item.href} className="hover:text-gray-800">
+                                                <Link to="store" className="hover:text-gray-800">
                                                   {item.name}
-                                                </a>
+                                                </Link>
                                               </li>
                                             ))}
                                           </ul>
@@ -357,64 +402,84 @@ export default function Example() {
                   ))}
 
                   {navigation.pages.map((page) => (
-                    <a
+                    <Link
                       key={page.name}
-                      href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-50 hover:text-gray-400"
+                      to="store"
+                      className="flex items-center text-sm font-medium text-gray-100 hover:text-gray-500"
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-50 hover:text-gray-400">
+                  <Link to="signin" className="text-sm font-medium text-gray-100 hover:text-gray-500">
                     Sign in
-                  </a>
+                  </Link>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a href="#" className="text-sm font-medium text-gray-50 hover:text-gray-400">
+                  <Link to="store" className="text-sm font-medium text-gray-100 hover:text-gray-500">
                     Create account
-                  </a>
+                  </Link>
+                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  <Link to="api" className="text-sm font-medium text-gray-100 hover:text-gray-500">
+                    API Check
+                  </Link>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-50 hover:text-gray-400">
+                  <Link to="store" className="flex items-center text-gray-100 hover:text-gray-500">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
                     <span className="ml-3 block text-sm font-medium">CAD</span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
+                    <span className="sr-only">change currency</span>
+                  </Link>
                 </div>
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-50 hover:text-gray-400">
+                  <Link to="store" className="p-2 text-gray-100 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <Link to="cart" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-50 group-hover:text-gray-400"
+                      className="h-6 w-6 flex-shrink-0 text-gray-100 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-50 group-hover:text-gray-400">0</span>
+                    <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-gray500">0</span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </nav>
       </header>
+      <Banner/>
+      <Popular/>
+      <PopularList/>
     </div>
   )
 }
+
+
+// Banner
+
+
+
+
+
+
+       
+
+
+
